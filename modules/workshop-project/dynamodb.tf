@@ -35,7 +35,7 @@ ITEM
 
 resource "aws_dynamodb_table_item" "second" {
   count      = var.create_team_member ? "1" : 0
-  table_name = var.student_dynamodb_table_name
+  table_name = var.sandbox_dynamodb_table_name
   hash_key   = "SandboxId"
 
   item = <<ITEM
