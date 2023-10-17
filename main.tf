@@ -8,6 +8,7 @@ module "project" {
   student_email               = each.key
   expires_after_days          = var.expires_after_days
   student_organization_key    = var.student_organization_key
+  sandbox_id                  = var.sandbox_id
   student_dynamodb_table_name = data.terraform_remote_state.infrastructure.outputs.users_table_name
   login_base_url              = data.terraform_remote_state.infrastructure.outputs.users_login_url
 }

@@ -1,9 +1,9 @@
 resource "aws_dynamodb_table_item" "this" {
-    count = var.create_team_member ? "1": 0
-    table_name = var.student_dynamodb_table_name
-    hash_key = "ProjectId"
+  count      = var.create_team_member ? "1" : 0
+  table_name = var.student_dynamodb_table_name
+  hash_key   = "ProjectId"
 
-    item = <<ITEM
+  item = <<ITEM
 {
     "ProjectId": { 
         "S": "${local.project_id}"
@@ -28,6 +28,23 @@ resource "aws_dynamodb_table_item" "this" {
     },
     "StudentOrganizationKey": { 
         "S": "${var.student_organization_key}" 
+    }
+}
+ITEM
+}
+
+resource "aws_dynamodb_table_item" "second" {
+  count      = var.create_team_member ? "1" : 0
+  table_name = var.student_dynamodb_table_name
+  hash_key   = "SandboxId"
+
+  item = <<ITEM
+{
+    "SandboxId": {
+        "S": "${var.sandbox_id}"
+    },
+    "ProjectId": { 
+        "S": "${local.project_id}"
     }
 }
 ITEM

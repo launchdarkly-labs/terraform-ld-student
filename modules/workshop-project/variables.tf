@@ -56,3 +56,8 @@ variable "email_domain" {
   description = "The email domain of the generated login emails."
   default     = "launchdarkly.com"
 }
+
+variable "sandbox_id" {
+  type        = string
+  description = "The Sandbox ID of the Instruqt VM running the content."
+}

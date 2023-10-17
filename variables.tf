@@ -39,3 +39,8 @@ variable "expires_after_days" {
   description = "The number of days from creation after which the login links will expire."
   default     = 3
 }
+
+variable "sandbox_id" {
+  type        = string
+  description = "The Sandbox ID of the Instruqt VM running the content."
+}
