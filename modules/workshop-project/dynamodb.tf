@@ -44,7 +44,7 @@ resource "aws_dynamodb_table_item" "second" {
         "S": "${var.sandbox_id}"
     },
     "LoginUrl": {
-        "S": "${locals.login_url}"
+        "S": "${local.login_url}"
     },
     "ProjectId": { 
         "S": "${local.project_id}"
