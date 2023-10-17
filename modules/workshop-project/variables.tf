@@ -23,6 +23,11 @@ variable "student_organization_key" {
   description = "The organization key for the student, used as a tag for all resources created by this module."
 }
 
+variable "sandbox_dynamodb_table_name" {
+  type        = string
+  description = "The name of the DynamoDB table name to write the sandbox ID record to."
+}
+
 variable "student_dynamodb_table_name" {
   type        = string
   description = "The name of the DynamoDB table name to write the team member record to."
