@@ -119,3 +119,29 @@ resource "launchdarkly_custom_role" "reader" {
     effect = "allow"
   }
 }
+
+resource "launchdarkly_custom_role" "pa_workshop_reader" {
+  key         = "pa-workshop-reader"
+  name        = "Product Analytics Workshop Reader"
+  description = "Reader role for PA Workshop project."
+
+  policy_statements {
+    not_resources = [
+      "proj/pa-workshop"
+    ]
+    actions = [
+      "viewProject"
+    ]
+    effect = "deny"
+  }
+
+  policy_statements {
+    resources = [
+      "proj/pa-workshop"
+    ]
+    actions = [
+      "viewProject"
+    ]
+    effect = "allow"
+  }
+}
