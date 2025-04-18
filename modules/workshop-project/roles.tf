@@ -92,6 +92,16 @@ resource "launchdarkly_custom_role" "admin" {
     ]
     effect = "allow"
   }
+
+  policy_statements {
+    resources = [
+      "proj/${local.project_key}:metric-group/*"
+    ]
+    actions = [
+      "*"
+    ]
+    effect = "allow"
+  }
 }
 
 resource "launchdarkly_custom_role" "reader" {
